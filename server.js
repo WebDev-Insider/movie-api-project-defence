@@ -21,7 +21,7 @@ app.use(helmet());
 // CORS middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://yourdomain.com'] 
+    ? ['https://movie-info-api-gsqo.onrender.com/'] 
     : ['http://localhost:3000', 'http://localhost:3001'],
   credentials: true
 }));
