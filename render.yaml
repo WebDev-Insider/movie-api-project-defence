@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: movie-info-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_VERSION
+        value: v1
+      - key: API_BASE_URL
+        value: /api/v1
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+      - key: LOG_LEVEL
+        value: info
+      # External API Keys
+      - key: TMDB_API_KEY
+        value: 88b19e2c931cdaca38d1dd3c8aba05c7
+      - key: OMDB_API_KEY
+        value: b0609521
+      - key: RAPIDAPI_KEY
+        value: 6452825283msha65e872e85ce3e1p1c7441jsnfe515b08dbd3
+      # MongoDB Atlas connection string - Add this in Render dashboard for security
+      # - key: MONGODB_URI
+      #   value: mongodb+srv://username:password@cluster.mongodb.net/moviedb
+      # Optional: Add PORT (Render will set this automatically)
+      # - key: PORT
+      #   value: 10000
